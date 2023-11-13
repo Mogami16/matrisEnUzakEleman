@@ -81,7 +81,7 @@ int main() {
 			}
 		}
 	}
-	
+
 
 	cout << "Sayilar: ";
 	int index = 0;
