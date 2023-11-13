@@ -1,0 +1,1 @@
+Girilen matrisin içindeki değerleri rastgele olarak yerlerini değiştirip birinci matristeki sayıların indexi ile ikinci matristeki sayıların indexinin farkının bulunup arasındaki en büyük fark olan sayının yazdırılması
