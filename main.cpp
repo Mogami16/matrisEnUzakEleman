@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include "Matris.h"
-
+#include <vector>
 
 using namespace std;
 
@@ -52,6 +52,10 @@ int main() {
 
 	int enBuyukFark = 0;
 	int sayi = 0;
+
+	vector<int> sayilar;
+	vector<int> farklar;
+
 	// Eski Matris
 	for (int i = 0; i < satirSayisi; i++) {
 		for (int j = 0; j < sutunSayisi; j++) {
@@ -61,10 +65,12 @@ int main() {
 				for (int l = 0; l < sutunSayisi; l++) {
 					if (matris->getMatris()[i][j] == yeniMatris[k][l]) {
 
-						if ((abs(i - k) + abs(j - l)) > enBuyukFark) {
+						if ((abs(i - k) + abs(j - l)) >= enBuyukFark) {
 							
 							enBuyukFark = abs(i - k) + abs(j - l);
 							sayi = matris->getMatris()[i][j];
+							sayilar.push_back(sayi);
+							farklar.push_back((abs(i - k) + abs(j - l)));
 						}
 
 					}
@@ -76,7 +82,22 @@ int main() {
 		}
 	}
 	
-	cout << "Sayi: " << sayi << endl;
+
+	cout << "Sayilar: ";
+	int index = 0;
+	for (int i : sayilar) {
+		
+		if (farklar.at(index) == enBuyukFark) {
+			cout << i << " ";
+		}
+		index++;
+
+	}
+	cout << endl;
+
+
+	
+	//cout << "Sayi: " << sayi << endl;
 	cout << "Fark: " << enBuyukFark << endl;
 
 	delete[] yeniMatris;
